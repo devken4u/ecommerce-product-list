@@ -1,0 +1,24 @@
+<main class="roboto-regular">
+  @for(product of productList; track $index){
+  <div class="product-card">
+    <div class="product-card__image__container">
+      <img class="product-card__image" [src]="product.image" />
+    </div>
+    <div class="product-card__details">
+      <p class="product-card__details__name roboto-bold">
+        {{ product.name }}
+      </p>
+      <p class="product-card__details__description multiline-ellipsis">
+        {{ product.description }}
+      </p>
+      <p class="product-card__details__price roboto-black">
+        {{ product.price | currency : "PHP" }}
+      </p>
+      <div class="button-container">
+        <button class="button-cart roboto-medium">Cart</button>
+        <button class="button-buy roboto-medium">Buy</button>
+      </div>
+    </div>
+  </div>
+  }
+</main>
